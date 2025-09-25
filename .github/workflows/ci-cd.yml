@@ -26,14 +26,15 @@ jobs:
 
      
       
-      - name: Install Angular
-        run:  npm install -g @angular/cli
+      # - name: Install Angular
+      #   run:  npm install -g @angular/cli
       
       - name: Run Build
-        run: ng build --configuration production
+        run: npm run build -- --configuration production
       
       - name: Get list of files
         run: |
+          ls
           ls dist/myapp/browser/
       
       - name: Upload Build To artifact
