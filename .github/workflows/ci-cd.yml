@@ -34,7 +34,7 @@ jobs:
       
       - name: Get list of files
         run: |
-          ls dist/myapp/
+          ls dist/myapp/browser/
           
 
       
