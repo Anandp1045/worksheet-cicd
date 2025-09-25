@@ -34,9 +34,7 @@ jobs:
       
       - name: Get list of files
         run: |
-          ls -a
-          cd dist
-          ls
+          ls dist/
           
 
       
