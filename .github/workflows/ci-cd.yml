@@ -60,3 +60,14 @@ jobs:
           key: ${{ secrets.KEY }}
           source: .
           target: /home/ubuntu/
+      
+      - name: Copy files via SSH
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          script: |
+
+            sudo rm -rf /var/www/html/*
+            mv /home/ubuntu/* /var/www/html/
