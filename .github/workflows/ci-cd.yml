@@ -42,7 +42,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: worksheet-build
-          path: dist/myapp/browser/*
+          path: dist/myapp/browser/
 
   Deploy:
     runs-on: ubuntu-latest
@@ -52,7 +52,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: worksheet-build
-          path: .
+          path: ./build
 
       - name: Copy files via SSH
         uses: appleboy/scp-action@v1
@@ -60,8 +60,8 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
-          source: .
-          target: /home/ubuntu/
+          source: ./build/*
+          target: /home/ubuntu/deploy_build/
       
       - name: Copy files via SSH
         uses: appleboy/ssh-action@v1
