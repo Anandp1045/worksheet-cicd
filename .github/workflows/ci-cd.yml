@@ -62,7 +62,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           source: ./build/
-          target: /home/ubuntu/deploy_build/
+          target: /home/ubuntu/
       
       - name: Copy files via SSH
         uses: appleboy/ssh-action@v1
@@ -73,5 +73,5 @@ jobs:
           script: |
 
             sudo rm -rf /var/www/html/*
-            mv /home/ubuntu/deploy_build/* /var/www/html/
+            mv /home/ubuntu/build/* /var/www/html/
             sudo systemctl restart nginx
