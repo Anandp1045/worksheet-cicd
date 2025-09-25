@@ -35,6 +35,7 @@ jobs:
       - name: Get list of files
         run: |
           ls
+          echo "end of the first command"
           ls dist/myapp/browser/
       
       - name: Upload Build To artifact
