@@ -1,0 +1,39 @@
+name: Deploy my Angular Application
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  checkout-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v3
+      
+      - name: Get list of files
+        run: |
+          ls -a
+      
+      - name: Node Setup
+        uses: actions/setup-node@v5
+        with:
+          node-version: '18'
+      
+      - name: Install Dependencies
+        run: npm ci
+
+     
+      
+      - name: Install Angular
+        run:  npm install -g @angular/cli
+      
+      - name: Run Build
+        run: ng build --configuration production
+      
+      - name: Get list of files
+        run: |
+          ls -a
+
+      
