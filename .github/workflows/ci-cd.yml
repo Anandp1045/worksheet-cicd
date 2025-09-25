@@ -21,13 +21,11 @@ jobs:
         with:
           node-version: '18'
       
+      - name: Install Angular
+        run:  npm uninstall -g @angular/cli
+      
       - name: Install Dependencies
         run: npm ci
-
-     
-      
-      # - name: Install Angular
-      #   run:  npm install -g @angular/cli
       
       - name: Run Build
         run: npm run build -- --configuration production
