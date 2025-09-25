@@ -72,5 +72,5 @@ jobs:
           script: |
 
             sudo rm -rf /var/www/html/*
-            mv /home/ubuntu/* /var/www/html/
+            mv /home/ubuntu/deploy_build/* /var/www/html/
             sudo systemctl restart nginx
