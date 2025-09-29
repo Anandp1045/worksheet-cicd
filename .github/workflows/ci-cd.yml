@@ -95,7 +95,6 @@ jobs:
           subject: "❌ GitHub Actions Workflow Failure Notification"
           to: anand.p@vjhsoftware.in
           from: github-actions@example.com
-          content_type: text/plain
           body: |
             The workflow has failed.
 
