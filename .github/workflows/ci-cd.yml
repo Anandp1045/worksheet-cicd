@@ -101,5 +101,5 @@ jobs:
             Build status: ${{ needs.checkout-and-build.result }}
             Deploy status: ${{ needs.Deploy.result }}
 
-            Check the workflow run here: ${{ github.run_url }}
+            Check the workflow run here: "https://github.com/${{github.repository}}/commit/${{github.sha}}/checks/${{github.run_id}}"
 
