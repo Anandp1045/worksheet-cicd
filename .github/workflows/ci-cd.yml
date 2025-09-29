@@ -80,4 +80,3 @@ jobs:
         run: |
           echo "Build results : ${{ needs.checkout-and-build.result }}"
           echo "Deploy results : ${{ needs.Deploy.result }}"
-          echo "completed Evaluate"
