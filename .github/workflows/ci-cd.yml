@@ -76,7 +76,7 @@ jobs:
   notify:
   needs: [checkout-and-build, Deploy]
   runs-on: ubuntu-latest
-  if: always()
+  if: ${{ always() }}
   steps:
     - name: Check build and deploy results
       id: check_results
