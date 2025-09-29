@@ -79,4 +79,6 @@ jobs:
       - name: Evaluate job results
         run: |
           echo "Build results : ${{ needs.checkout-and-build.result }}"
+          echo "Build results : ${{ needs.checkout-and-build }}"
           echo "Deploy results : ${{ needs.Deploy.result }}"
+          echo "Deploy results : ${{ needs.Deploy }}"
