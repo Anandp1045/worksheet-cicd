@@ -70,3 +70,13 @@ jobs:
             sudo rm -rf /var/www/html/*
             mv /home/ubuntu/build/* /var/www/html/
             sudo systemctl restart nginx
+  
+  notify:
+    needs: [checkout-and-build, Deploy]
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: Evaluate job results
+        run: |
+          echo "Build results : ${{ needs.checkout-and-build.result }}"
+          echo "Deploy results : ${{ needs.Deploy.result }}"
